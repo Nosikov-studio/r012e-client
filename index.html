@@ -31,20 +31,10 @@
     </form>
     <div class="result5"> </div>
 </main>
-<h1>Способ №1 Получаем ответ от сервера c редиректом</h1>
+
+<h1>Способ №1 Обработка формы перед отправкой скриптом</h1>
 <h1> Добавь данных! </h1>
-<form action="http://truruki.ru/createfromclient/" method="post" name="form1" id="form1" style="background-color:gray;margin:10px;padding:20px;">
-    <p>Имя <input name="nam" type="text"> </p>
-    <p>Возраст <input name="ag" type="text"> </p>
-    <p><input name="submit" type="submit" value="push!"> </p>
-
-
-</form>
-
-
-<h1>Способ №2 </h1>
-<h1> Добавь данных! </h1>
-<form action="http://truruki.ru/api/" method="post" name="form1" id="form1" style="background-color:gray;margin:10px;padding:20px;">
+<form method="post" name="form1" id="form1" style="background-color:gray;margin:10px;padding:20px;">
     <p>Имя <input name="name" type="text"> </p>
     <p>Возраст <input name="age" type="text"> </p>
     <p><input name="submit" type="submit" value="push!"> </p>
@@ -52,9 +42,9 @@
 
 </form>
 
-<h1>Способ №3 </h1>
+<h1>Способ №2 Переход на серверную страницу "http://truruki.ru/create/" Выдаст серверную страницу </h1>
 <h1> Добавь данных! </h1>
-<form action="http://truruki.ru/create/" method="post" name="form1" id="form1" style="background-color:gray;margin:10px;padding:20px;">
+<form action="http://truruki.ru/create/" method="post" name="form2" id="form2" style="background-color:gray;margin:10px;padding:20px;">
     <p>Имя <input name="name" type="text"> </p>
     <p>Возраст <input name="age" type="text"> </p>
     <p><input name="submit" type="submit" value="push!"> </p>
