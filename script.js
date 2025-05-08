@@ -2,15 +2,18 @@
 const f5 = document.querySelector('.f5')
 const r5 = document.querySelector('.result5')
 
-  fetch('http://truruki.ru/api')
+function ab() {
+
+fetch('http://truruki.ru/api')
     .then(response => response.json())
     .then(j => {
       const html = j.map(item => `<tr><td>${item.name}</td><td>${item.age}</td><tr>`).join('');
       r5.innerHTML =`<table> ${html} </table>`;
       
 })
+}
 
-
+ab();
 
 const form1 = document.getElementById('form1');
   form1.addEventListener('submit', function(event) {
