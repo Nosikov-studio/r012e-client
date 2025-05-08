@@ -19,7 +19,7 @@ const form1 = document.getElementById('form1');
   const formData = new FormData(form1); // Сбор данных формы
   const FormDataObject = Object.fromEntries(formData);
 
-  fetch('http://truruki.ru/api/add', {
+  fetch('http://truruki.ru/api', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
