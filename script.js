@@ -26,8 +26,7 @@ const form1 = document.getElementById('form1');
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      't':'b'
-    },
+      },
     body: JSON.stringify({
       ...FormDataObject,
       views: 0,
