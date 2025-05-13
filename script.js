@@ -88,19 +88,33 @@ fetch('http://truruki.ru/api')
             <button class="btn"> -delete- </button>
         </li>`).join('');
       r8.innerHTML =`<ul> ${html} </ul>`;
-      
+
+// Функция-обработчик клика
+function handleClick(event) {
+
+event.preventDefault();
+console.log('Нажата кнопка в элементе списка:', event.target.parentElement.textContent.trim());
+//   console.log('Нажата кнопка в элементе списка:');
+}
+
+// Навешиваем обработчик на каждую кнопку
+buttons.forEach(button => {
+button.addEventListener('click', handleClick);
+}); 
+
+
 })
 }
 
 list3();
 
-// Получаем все кнопки с классом 'btn'
-const buttons = document.querySelectorAll('.btn');
+// // Получаем все кнопки с классом 'btn'
+// const buttons = document.querySelectorAll('.btn');
 
 
-for (let buttonItem of buttons) {
-  buttonItem.addEventListener('click', (e) => {e.preventDefault(); console.log('Нажата кнопка в элементе списка:');});
-}
+// for (let buttonItem of buttons) {
+//   buttonItem.addEventListener('click', (e) => {e.preventDefault(); console.log('Нажата кнопка в элементе списка:');});
+// }
 
 // // Функция-обработчик клика
 // function handleClick(event) {
