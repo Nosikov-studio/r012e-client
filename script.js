@@ -102,6 +102,7 @@ console.log(event.target.id);
 fetch(`http://truruki.ru/delete/${Number(event.target.id)}`, {method: 'POST',})
     .then(response => response.json())
     .then(j => {
+      tb(); list(); list2(); list3();
       console.log(j);     
 })
 }
