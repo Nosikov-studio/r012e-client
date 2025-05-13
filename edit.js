@@ -1,7 +1,4 @@
-  // const params = new URLSearchParams(window.location.search);
 
-  // Для каждого поля устанавливаем placeholder из параметров, если они есть
-  // const name= document.getElementById('name');
 
 // Получаем параметры из URL
   const urlParams = new URLSearchParams(window.location.search);
@@ -25,3 +22,28 @@
 // Устанавливаем placeholder равным значению параметра из URL
         inputAge.placeholder = ageParam;
       }
+
+// Отправка данных формы
+const form1 = document.getElementById('fmed');
+  form1.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+  const formData = new FormData(form1); // Сбор данных формы
+  const FormDataObject = Object.fromEntries(formData);
+
+  fetch(`http://truruki.ru/api/${idParam}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      },
+    body: JSON.stringify({
+      ...FormDataObject,
+      views: 0,
+    })
+  })
+    .then(response => response.json())
+    .then(j => {
+      console.log(j);      
+      form1.reset(); // очищаем форму
+    });
+  });
