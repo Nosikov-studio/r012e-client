@@ -84,9 +84,9 @@ fetch('http://truruki.ru/api')
     .then(response => response.json())
     .then(j => {
       const html = j.map(item => `<li><a href="/edit.html?id=${item.id}&name=${item.name}&age=${item.age}">
-        ${item.name}------${item.age} 
+        ${item.name}------${item.age} <a/>
             <button class="btn"> delete </button>
-        <a/></li>`).join('');
+        </li>`).join('');
       r8.innerHTML =`<ul> ${html} </ul>`;
       
 })
