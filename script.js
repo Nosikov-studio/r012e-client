@@ -66,7 +66,7 @@ function list2() {
 fetch('http://truruki.ru/api')
     .then(response => response.json())
     .then(j => {
-      const html = j.map(item => `<li><a href="">${item.name}------${item.age}<a/></li>`).join('');
+      const html = j.map(item => `<li><a href="http://truruki.ru/api/${item.id}">${item.name}------${item.age}<a/></li>`).join('');
       r7.innerHTML =`<ul> ${html} </ul>`;
       
 })
