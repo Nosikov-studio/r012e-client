@@ -35,6 +35,7 @@ const form1 = document.getElementById('fmed');
   const formData = new FormData(form1); // Сбор данных формы
   const FormDataObject = Object.fromEntries(formData);
 
+
   fetch('http://truruki.ru/api/edit', {
     method: 'POST',
     headers: {
@@ -50,8 +51,8 @@ const form1 = document.getElementById('fmed');
     .then(j => {
       console.log(j);      
       form1.reset(); // очищаем форму
-      inputName.placeholder =j.name;
-      inputAge.placeholder =j.age;
+      inputName.placeholder =FormDataObject.name;
+      inputAge.placeholder =FormDataObject.age;
 
     });
   });
