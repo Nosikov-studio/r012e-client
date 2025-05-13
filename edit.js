@@ -1,19 +1,27 @@
-  const params = new URLSearchParams(window.location.search);
+  // const params = new URLSearchParams(window.location.search);
 
   // Для каждого поля устанавливаем placeholder из параметров, если они есть
-  const name= document.getElementById('name');
-  if (params.has('name')) {
-    name.placeholder = params.get('name');
-  }
+  // const name= document.getElementById('name');
 
-  const age= document.getElementById('age');
-  if (params.has('age')) {
-    age.placeholder = params.get('age');
-  }
+// Получаем параметры из URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const nameParam = urlParams.get('name'); // получаем значение 
+  const ageParam = urlParams.get('age'); // получаем значение 
+  const idParam = urlParams.get('id'); // получаем значение 
+ 
+ // Находим форму по имени
+  const form = document.forms['fmed'];
 
-  // получаем id редактируемого юзера
-  if (params.has('id')) {
-    const id = params.get('id');
-  }
+// Находим input с name="name"
+  const inputName = form.elements['name'];
+      if (inputName) {
+// Устанавливаем placeholder равным значению параметра из URL
+        inputName.placeholder = nameParam;
+      }
 
-  
+// Находим input с name="age"
+  const inputAge = form.elements['age'];
+      if (inputAge) {
+// Устанавливаем placeholder равным значению параметра из URL
+        inputAge.placeholder = ageParam;
+      }
