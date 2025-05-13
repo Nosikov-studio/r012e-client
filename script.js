@@ -101,8 +101,8 @@ const buttons = document.querySelectorAll('.btn');
 function handleClick(event) {
   // event.target - это кнопка, на которую нажали
   //event.preventDefault();
-  console.log('Нажата кнопка в элементе списка:', event.target.parentElement.textContent.trim());
-
+  //console.log('Нажата кнопка в элементе списка:', event.target.parentElement.textContent.trim());
+   console.log('Нажата кнопка в элементе списка:');
 }
 
 // Навешиваем обработчик на каждую кнопку
