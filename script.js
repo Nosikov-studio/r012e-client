@@ -13,7 +13,7 @@ fetch('http://truruki.ru/api')
 })
 }
 
-tb();
+tb(); list(); list2();
 
 const form1 = document.getElementById('form1');
   form1.addEventListener('submit', function(event) {
