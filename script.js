@@ -98,6 +98,7 @@ function handleClick(event) {
 event.preventDefault();
 console.log('Нажата кнопка в элементе списка:', event.target.parentElement.textContent.trim());
 console.log(event.target);
+console.log(event.target.id);
 }
 
 // Навешиваем обработчик на каждую кнопку
