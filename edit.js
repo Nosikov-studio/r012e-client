@@ -31,7 +31,7 @@ const form1 = document.getElementById('fmed');
   const formData = new FormData(form1); // Сбор данных формы
   const FormDataObject = Object.fromEntries(formData);
 
-  fetch(`http://truruki.ru/api/edit`, {
+  fetch('http://truruki.ru/api/edit', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
