@@ -93,3 +93,18 @@ fetch('http://truruki.ru/api')
 }
 
 list3();
+
+// Получаем все кнопки с классом 'btn'
+const buttons = document.querySelectorAll('.btn');
+
+// Функция-обработчик клика
+function handleClick(event) {
+  // event.target - это кнопка, на которую нажали
+  console.log('Нажата кнопка в элементе списка:', event.target.parentElement.textContent.trim());
+  
+}
+
+// Навешиваем обработчик на каждую кнопку
+buttons.forEach(button => {
+  button.addEventListener('click', handleClick);
+});
