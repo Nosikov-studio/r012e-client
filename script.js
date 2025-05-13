@@ -85,9 +85,9 @@ fetch('http://truruki.ru/api')
     .then(j => {
       const html = j.map(item => `<li><a href="/edit.html?id=${item.id}&name=${item.name}&age=${item.age}">
         ${item.name}------${item.age} 
-            <form action="/delete.html?id=${item.id}" method="POST" style="display:inline;">
-                <input type="submit" value="Delete" />
-            </form>
+            <botton id=${item.id} name="delete">
+                "Delete" 
+            </botton>
         <a/></li>`).join('');
       r8.innerHTML =`<ul> ${html} </ul>`;
       
