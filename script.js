@@ -2,7 +2,7 @@
 const f5 = document.querySelector('.f5')
 const r5 = document.querySelector('.result5')
 
-function ab() {
+function tb() {
 
 fetch('http://truruki.ru/api')
     .then(response => response.json())
@@ -13,7 +13,7 @@ fetch('http://truruki.ru/api')
 })
 }
 
-ab();
+tb();
 
 const form1 = document.getElementById('form1');
   form1.addEventListener('submit', function(event) {
@@ -39,3 +39,20 @@ const form1 = document.getElementById('form1');
       form1.reset(); // очищаем форму
     });
   });
+
+  //************************************************************************** */
+
+  const r6 = document.querySelector('.result6')
+
+function list() {
+
+fetch('http://truruki.ru/api')
+    .then(response => response.json())
+    .then(j => {
+      const html = j.map(item => `<li>${item.name}------${item.age}</li>`).join('');
+      r6.innerHTML =`<ul> ${html} </ul>`;
+      
+})
+}
+
+list();
