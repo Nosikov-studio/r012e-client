@@ -4,7 +4,7 @@
   const urlParams = new URLSearchParams(window.location.search);
   const nameParam = urlParams.get('name'); // получаем значение 
   const ageParam = urlParams.get('age'); // получаем значение 
-  const idParam = urlParams.get('id'); // получаем значение 
+  const idParam = Number(urlParams.get('id')); // получаем значение 
  
  // Находим форму по имени
   const form = document.forms['fmed'];
