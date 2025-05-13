@@ -13,7 +13,7 @@ fetch('http://truruki.ru/api')
 })
 }
 
-tb(); list(); list2();
+tb();
 
 const form1 = document.getElementById('form1');
   form1.addEventListener('submit', function(event) {
@@ -35,7 +35,7 @@ const form1 = document.getElementById('form1');
     .then(response => response.json())
     .then(j => {
       console.log(j);
-      tb();
+      tb(); list(); list2();
       form1.reset(); // очищаем форму
     });
   });
