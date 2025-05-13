@@ -73,3 +73,20 @@ fetch('http://truruki.ru/api')
 }
 
 list2();
+
+//************************************************************************** */
+
+ const r8 = document.querySelector('.result8')
+
+function list3() {
+
+fetch('http://truruki.ru/api')
+    .then(response => response.json())
+    .then(j => {
+      const html = j.map(item => `<li><a href="/edit.html?id=${item.id}&name=${item.name}&age=${item.age}">${item.name}------${item.age}<a/></li>`).join('');
+      r8.innerHTML =`<ul> ${html} </ul>`;
+      
+})
+}
+
+list3();
