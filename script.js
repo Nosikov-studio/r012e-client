@@ -35,7 +35,7 @@ const form1 = document.getElementById('form1');
     .then(response => response.json())
     .then(j => {
       console.log(j);
-      tb(); list(); list2();
+      tb(); list(); list2(); list3();
       form1.reset(); // очищаем форму
     });
   });
