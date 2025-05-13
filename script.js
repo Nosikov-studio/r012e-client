@@ -35,7 +35,7 @@ const form1 = document.getElementById('form1');
     .then(response => response.json())
     .then(j => {
       console.log(j);
-      ab();
+      tb();
       form1.reset(); // очищаем форму
     });
   });
