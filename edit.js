@@ -1,5 +1,5 @@
 
-
+function init() {
 // Получаем параметры из URL
   const urlParams = new URLSearchParams(window.location.search);
   const nameParam = urlParams.get('name'); // получаем значение 
@@ -22,6 +22,12 @@
 // Устанавливаем placeholder равным значению параметра из URL
         inputAge.placeholder = ageParam;
       }
+}
+
+init();
+
+
+
 
 // Отправка данных формы
 const form1 = document.getElementById('fmed');
@@ -46,5 +52,6 @@ const form1 = document.getElementById('fmed');
     .then(j => {
       console.log(j);      
       form1.reset(); // очищаем форму
+      init();
     });
   });
