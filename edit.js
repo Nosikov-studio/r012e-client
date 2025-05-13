@@ -38,7 +38,7 @@ const form1 = document.getElementById('fmed');
       },
     body: JSON.stringify({
       ...FormDataObject,
-      //views: 0,
+      views: 0,
     })
   })
     .then(response => response.json())
