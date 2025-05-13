@@ -97,15 +97,20 @@ list3();
 // Получаем все кнопки с классом 'btn'
 const buttons = document.querySelectorAll('.btn');
 
-// Функция-обработчик клика
-function handleClick(event) {
-  // event.target - это кнопка, на которую нажали
-  //event.preventDefault();
-  //console.log('Нажата кнопка в элементе списка:', event.target.parentElement.textContent.trim());
-   console.log('Нажата кнопка в элементе списка:');
+
+for (let buttonItem of buttons) {
+  buttonItem.addEventListener('click', (e) => {e.preventDefault(); console.log('Нажата кнопка в элементе списка:');});
 }
 
-// Навешиваем обработчик на каждую кнопку
-buttons.forEach(button => {
-  button.addEventListener('click', handleClick);
-});
+// // Функция-обработчик клика
+// function handleClick(event) {
+//   // event.target - это кнопка, на которую нажали
+//   //event.preventDefault();
+//   //console.log('Нажата кнопка в элементе списка:', event.target.parentElement.textContent.trim());
+//    console.log('Нажата кнопка в элементе списка:');
+// }
+
+// // Навешиваем обработчик на каждую кнопку
+// buttons.forEach(button => {
+//   button.addEventListener('click', handleClick);
+// });
