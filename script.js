@@ -99,6 +99,11 @@ event.preventDefault();
 console.log('Нажата кнопка в элементе списка:', event.target.parentElement.textContent.trim());
 console.log(event.target);
 console.log(event.target.id);
+fetch(`http://truruki.ru/delete/${event.target.id}`)
+    .then(response => response.json())
+    .then(j => {
+      console.log(j);     
+})
 }
 
 // Навешиваем обработчик на каждую кнопку
