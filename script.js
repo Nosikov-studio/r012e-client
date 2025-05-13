@@ -85,7 +85,7 @@ fetch('http://truruki.ru/api')
     .then(j => {
       const html = j.map(item => `<li><a href="/edit.html?id=${item.id}&name=${item.name}&age=${item.age}">
         ${item.name}------${item.age} <a/>
-            <button class="btn"> -delete- </button>
+            <button class="btn" id="${item.id}"> -delete- </button>
         </li>`).join('');
       r8.innerHTML =`<ul> ${html} </ul>`;
 
@@ -97,6 +97,7 @@ function handleClick(event) {
 
 event.preventDefault();
 console.log('Нажата кнопка в элементе списка:', event.target.parentElement.textContent.trim());
+console.log(event.target);
 }
 
 // Навешиваем обработчик на каждую кнопку
