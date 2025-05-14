@@ -120,6 +120,7 @@ button.addEventListener('click', handleClick);
 list3();
 
 //***************************работа с библиотекой axios***************************** */
+function a(){
 const r9 = document.querySelector('.result9')
 //const axios = require('axios/dist/browser/axios.cjs'); // browser
 //Пример простого GET-запроса:
@@ -133,6 +134,10 @@ axios.get('http://truruki.ru/api')
   .catch(error => {
     console.error('Ошибка при запросе:', error);
   });
+}
+
+a();
+
 //*************************10) форма ввода в модальном окне */******************************* */
 const modal = document.getElementById('modal');
 const openBtn = document.getElementById('openModal');
@@ -181,7 +186,7 @@ okBtn11.onclick = () => {
   const name = userInput11.value;
   const age = ageInput11.value;
   alert('Вы ввели: ' + name+" " +age);
-
+// Отправка данных в БД
         fetch('http://truruki.ru/api', {
         method: 'POST',
         headers: {
@@ -196,7 +201,7 @@ okBtn11.onclick = () => {
         .then(response => response.json())
         .then(j => {
         console.log(j);
-        tb(); list(); list2(); list3();
+        tb(); list(); list2(); list3(); a(); // обновления отображения в свете новой записи в БД
         });
 
   modal11.style.display = 'none';
