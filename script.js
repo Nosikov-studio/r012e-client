@@ -178,11 +178,32 @@ openBtn11.onclick = () => {
 };
 
 okBtn11.onclick = () => {
-  const value = userInput11.value;
-  alert('Вы ввели: ' + value);
+  const name = userInput11.value;
+  const age = ageInput11.value;
+  alert('Вы ввели: ' + name+" " +age);
+
+        fetch('http://truruki.ru/api', {
+        method: 'POST',
+        headers: {
+        'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+          name: name,
+          age: age,
+          views: 0,
+          })
+        })
+        .then(response => response.json())
+        .then(j => {
+        console.log(j);
+        tb(); list(); list2(); list3();
+        });
+
   modal11.style.display = 'none';
   userInput11.value = '';
+  ageInput11.value = '';
 };
+
 
 cancelBtn11.onclick = () => {
   modal11.style.display = 'none';
