@@ -133,3 +133,34 @@ axios.get('http://truruki.ru/api')
   .catch(error => {
     console.error('Ошибка при запросе:', error);
   });
+//*************************10) форма ввода в модальном окне */******************************* */
+const modal = document.getElementById('modal');
+const openBtn = document.getElementById('openModal');
+const okBtn = document.getElementById('okBtn');
+const cancelBtn = document.getElementById('cancelBtn');
+const userInput = document.getElementById('userInput');
+
+openBtn.onclick = () => {
+  modal.style.display = 'flex';
+  userInput.focus();
+};
+
+okBtn.onclick = () => {
+  const value = userInput.value;
+  alert('Вы ввели: ' + value);
+  modal.style.display = 'none';
+  userInput.value = '';
+};
+
+cancelBtn.onclick = () => {
+  modal.style.display = 'none';
+  userInput.value = '';
+};
+
+// Закрытие при клике вне окна
+modal.onclick = (e) => {
+  if (e.target === modal) {
+    modal.style.display = 'none';
+    userInput.value = '';
+  }
+};
