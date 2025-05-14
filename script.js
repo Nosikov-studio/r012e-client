@@ -2,6 +2,7 @@
 const f5 = document.querySelector('.f5')
 const r5 = document.querySelector('.result5')
 
+// **********************получение данных из БД и вставка в таблицу***************************
 function tb() {
 
 fetch('http://truruki.ru/api')
@@ -14,7 +15,7 @@ fetch('http://truruki.ru/api')
 }
 
 tb();
-
+//*******************************вставка новой записи из формы в БД */*********************** */
 const form1 = document.getElementById('form1');
   form1.addEventListener('submit', function(event) {
     event.preventDefault();
@@ -40,7 +41,7 @@ const form1 = document.getElementById('form1');
     });
   });
 
-  //************************************************************************** */
+  //***************************вывод простого списка из БД*********************************************** */
 
   const r6 = document.querySelector('.result6')
 
@@ -57,7 +58,7 @@ fetch('http://truruki.ru/api')
 
 list();
 
-//************************************************************************** */
+//**************************список с ссылками, переход на редактирование (edit.html)************************************************ */
 
  const r7 = document.querySelector('.result7')
 
@@ -74,7 +75,7 @@ fetch('http://truruki.ru/api')
 
 list2();
 
-//************************************************************************** */
+//****************************список с ссылками и кнопками, удаление по кнопке********************************************** */
 
  const r8 = document.querySelector('.result8')
 
@@ -118,23 +119,18 @@ button.addEventListener('click', handleClick);
 
 list3();
 
-// // Получаем все кнопки с классом 'btn'
-// const buttons = document.querySelectorAll('.btn');
+//***************************работа с библиотекой axios***************************** */
+const r9 = document.querySelector('.result9')
+//Пример простого GET-запроса:
 
-
-// for (let buttonItem of buttons) {
-//   buttonItem.addEventListener('click', (e) => {e.preventDefault(); console.log('Нажата кнопка в элементе списка:');});
-// }
-
-// // Функция-обработчик клика
-// function handleClick(event) {
-//   // event.target - это кнопка, на которую нажали
-//   //event.preventDefault();
-//   //console.log('Нажата кнопка в элементе списка:', event.target.parentElement.textContent.trim());
-//    console.log('Нажата кнопка в элементе списка:');
-// }
-
-// // Навешиваем обработчик на каждую кнопку
-// buttons.forEach(button => {
-//   button.addEventListener('click', handleClick);
-// });
+axios.get('http://truruki.ru/api')
+  .then(response => {
+    console.log(response.data);
+    console.log("lalalalalalalalalla");
+    const html = response.data.map(item => `<tr><td>${item.name}</td><td>${item.age}</td><tr>`).join('');
+      r9.innerHTML =`<table> ${html} </table>`;
+  })
+  .catch(error => {
+    console.error('Ошибка при запросе:', error);
+  });
+  
