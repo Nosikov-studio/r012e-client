@@ -164,3 +164,35 @@ modal.onclick = (e) => {
     userInput.value = '';
   }
 };
+
+//*************************11) форма ввода в модальном окне (наш случай) */*************************** */
+const modal11 = document.getElementById('modal11');
+const openBtn11 = document.getElementById('openModal11');
+const okBtn11 = document.getElementById('okBtn11');
+const cancelBtn11 = document.getElementById('cancelBtn11');
+const userInput11 = document.getElementById('userInput11');
+
+openBtn11.onclick = () => {
+  modal11.style.display = 'flex';
+  userInput11.focus();
+};
+
+okBtn11.onclick = () => {
+  const value = userInput11.value;
+  alert('Вы ввели: ' + value);
+  modal11.style.display = 'none';
+  userInput11.value = '';
+};
+
+cancelBtn11.onclick = () => {
+  modal11.style.display = 'none';
+  userInput11.value = '';
+};
+
+// Закрытие при клике вне окна
+modal11.onclick = (e) => {
+  if (e.target === modal11) {
+    modal11.style.display = 'none';
+    userInput11.value = '';
+  }
+};
