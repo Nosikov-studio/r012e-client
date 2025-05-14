@@ -120,9 +120,9 @@ button.addEventListener('click', handleClick);
 list3();
 
 //***************************работа с библиотекой axios***************************** */
-function a(){
+function a() {
 const r9 = document.querySelector('.result9')
-//const axios = require('axios/dist/browser/axios.cjs'); // browser
+
 //Пример простого GET-запроса:
 
 axios.get('http://truruki.ru/api')
