@@ -121,16 +121,16 @@ list3();
 
 //***************************работа с библиотекой axios***************************** */
 const r9 = document.querySelector('.result9')
+const axios = require('axios/dist/browser/axios.cjs'); // browser
 //Пример простого GET-запроса:
 
 axios.get('http://truruki.ru/api')
   .then(response => {
     console.log(response.data);
     console.log("lalalalalalalalalla");
-    const html = response.data.map(item => `<tr><td>${item.name}</td><td>${item.age}</td><tr>`).join('');
-      r9.innerHTML =`<table> ${html} </table>`;
+    const h = response.data.map(item => `<tr><td>${item.name}</td><td>${item.age}</td><tr>`).join('');
+      r9.innerHTML =`<table> ${h} </table>`;
   })
   .catch(error => {
     console.error('Ошибка при запросе:', error);
   });
-  
